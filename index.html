@@ -6,15 +6,52 @@
   	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
 
+		<link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="js/script.js"></script>
 
 	</head>
 	<body>
-    content
+
+		<div class="container">
+			<!-- Head -->
+			<div>
+				<h1>
+					A Pomodoro Clock
+				</h1>
+				<h2>
+					<i> Designed and coded by <a href="https://simmol1997.github.io/portfolio" target="_blank"> Simon Möller</a></i>
+				</h2>
+			</div>
+			<!---->
+			<div class="flex-row">
+    		<div class="time-changer">
+					<button class="inc dur-changer"><span class="glyphicon glyphicon-chevron-up"></span></button>
+					<div>
+						1 &le; <span id="break-dur" class="dur">5</span> &le; 30
+					</div>
+					<button class="dec dur-changer"><span class="glyphicon glyphicon-chevron-down"></span></button>
+				</div>
+
+				<div class="time-changer">
+					<button class="inc dur-changer"><span class="glyphicon glyphicon-chevron-up"></span></button>
+					<div>
+						1 &le; <span id="focus-dur" class="dur">25</span> &le; 60
+					</div>
+					<button class="dec dur-changer"><span class="glyphicon glyphicon-chevron-down"></span></button>
+				</div>
+			</div><!-- flex-row -->
+
+			<div class="flex-row">
+				<button id="reset" class="btn">Reset</button>
+			</div>
+
+			<div class="flex-row">
+				<canvas id="timer" width="400" height="350"></canvas>
+			</div>
+		</div>
   </body>
 </html>

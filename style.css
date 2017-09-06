@@ -1,7 +1,6 @@
 * {
     box-sizing: border-box;
 }
-
 body {
     background: #1D4350; /* For browsers that do not support gradients */
     /* special thanks to uigradients.com for making this gradient */
@@ -9,4 +8,55 @@ body {
     background: -o-linear-gradient(right, #1D4350, #A43931); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(right, #1D4350, #A43931); /* For Firefox 3.6 to 15 */
     background: linear-gradient(to right, #1D4350 , #A43931); /* Standard syntax (must be last) */
+
+    color: white;
+    font-family: "Permanent Marker";
+}
+.container, .flex-row {
+  display: -webkit-flex;
+  display: flex;
+}
+.container {
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-justify-content: center;
+  justify-content: center;
+
+  text-align: center;
+  min-height: 100vh;
+}
+.flex-row {
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+
+  margin-top: 20px;
+}
+h1 {
+  font-size: 50px;
+}
+h2 {
+  font-size: 20px;
+}
+.time-changer {
+  font-size: 30px;
+}
+button {
+  outline: none !important;
+}
+.dur-changer {
+  border: none;
+  background: none;
+}
+.inc {
+  color: crimson;
+}
+.dec {
+  color: deepskyblue;
+}
+#reset {
+  height: 50px;
+  font-size: 20px;
+  background: slategrey;
 }
