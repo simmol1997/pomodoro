@@ -254,7 +254,7 @@ function updateTimer() {
     if(currMin == -1) {
       //The timer should be stopped and the user is asked to take a break or start focusing again
       alarm.play();
-      window.navigator.vibrate(300);
+      window.navigator.vibrate(500);
       timerStopped = true;
       timerOngoing = false;
       clearInterval(timer);
