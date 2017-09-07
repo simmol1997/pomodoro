@@ -10,7 +10,8 @@ var hover = false; // Tells the updateTimer what function to call
 var alarm; // The sound that will play when the timer runs out
 
 $(document).ready(function() {
-  createTimerBtn();
+  // Creates the timer in canvas and the notification sound
+  createTimer();
   createAlarmSound();
 
   /* The functions that increment and decrement the current duration of focus and break */
@@ -92,6 +93,16 @@ function minStrToSec(str) {
   seconds += minutes * 60;
   return seconds;
 }
+function getDuration() {
+  /* Returns the users requested duration */
+  if (focOrBreak == "focus") {
+    return $("#focus-dur").text() + ".00";
+  }
+  else if (focOrBreak == "break") {
+    return $("#break-dur").text() + ".00";
+  }
+  return "something went wrong with focOrBreak variable";
+}
 /* --------- */
 
 /* Sounds */
@@ -107,7 +118,7 @@ function createAlarmSound() {
 
 /* Canvas/Timer functions */
 var c, ctx;
-function createTimerBtn() {
+function createTimer() {
   c = document.getElementById("timer");
   ctx = c.getContext("2d");
 
@@ -191,6 +202,7 @@ function updateProgress() {
     // The user has not yet started the break timer
     return;
   }
+  // The break timer is ongoing and we can paint its progress
   curr = minStrToSec(counter);
   duration = minStrToSec(getDuration());
   progress = (duration - curr) / duration;
@@ -238,6 +250,7 @@ function updateTimer() {
       currSec--;
     }
     counter = currMin + "." + currSec;
+
     if(currMin == -1) {
       //The timer should be stopped and the user is asked to take a break or start focusing again
       alarm.play();
@@ -260,16 +273,5 @@ function updateTimer() {
   else {
     makeNormalTimer(counter);
   }
-}
-
-function getDuration() {
-  /* Returns the users requested duration */
-  if (focOrBreak == "focus") {
-    return $("#focus-dur").text() + ".00";
-  }
-  else if (focOrBreak == "break") {
-    return $("#break-dur").text() + ".00";
-  }
-  return "something went wrong with focOrBreak variable";
 }
 /* --------- */
