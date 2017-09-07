@@ -12,7 +12,7 @@ body {
     color: white;
     font-family: "Permanent Marker";
 }
-.container, .flex-row {
+.container, .flex-row, .time-changer {
   display: -webkit-flex;
   display: flex;
 }
@@ -40,7 +40,23 @@ h2 {
   font-size: 20px;
 }
 .time-changer {
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  align-items: center;
+
   font-size: 30px;
+}
+#break-container {
+  color: firebrick;
+}
+#focus-container {
+  color: slateblue;
+}
+.duration-description {
+  margin-right: 10px;
 }
 button {
   outline: none !important;
@@ -56,9 +72,11 @@ button {
   color: deepskyblue;
 }
 #reset {
+  background: slategrey;
+}
+#stop, #reset {
   height: 50px;
   font-size: 20px;
-  background: slategrey;
 }
 canvas {
   cursor: pointer;
