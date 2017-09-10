@@ -57,8 +57,8 @@ $(document).ready(function() {
       return;
     }
 
-    $("#focus-dur").text("25");
-    $("#break-dur").text("5");
+    $("#focus-dur").text("20");
+    $("#break-dur").text("10");
   });
 
   // Clicking the stop button stops the timer completely
@@ -191,7 +191,7 @@ function updateProgress() {
 
   ctx.shadowColor = "gold";
   ctx.shadowBlur = 10;
-  ctx.strokeStyle = "crimson";
+  ctx.strokeStyle = "#2a6845";
   ctx.lineWidth = 10;
 
   ctx.beginPath();
